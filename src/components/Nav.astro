@@ -1,0 +1,39 @@
+---
+  import Container from "./Container.astro";
+
+---
+
+
+<nav>
+  <Container>
+    <div class="nav">
+      <h1>Frolwers</h1>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/daq">Faq</a></li>
+      </ul>
+    </div>
+  </Container>
+</nav>
+
+
+<style>
+  .nav{
+    display: flex;
+    gap: 3rem;
+    ul{
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+      
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+</style>
