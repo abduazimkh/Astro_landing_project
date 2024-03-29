@@ -7,14 +7,16 @@
 <nav>
   <Container>
     <div class="nav">
-      <h1>Frolwers</h1>
+      <h1>Flowers</h1>
 
-      <ul>
+      <ul class="nav__menu">
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li><a href="/daq">Faq</a></li>
+        <li><a href="/faq">Faq</a></li>
       </ul>
+
+      <button class="modal-btn">x</button>
     </div>
   </Container>
 </nav>
@@ -23,8 +25,9 @@
 <style>
   .nav{
     display: flex;
-    gap: 3rem;
-    ul{
+    align-items: center;
+    justify-content: space-between;
+    .nav__menu{
       display: flex;
       align-items: center;
       gap: 1.5rem;
@@ -33,6 +36,30 @@
       a{
         text-decoration: none;
         color: #fff;
+      }
+    }
+    .modal-btn{
+      background-color: rgb(7, 69, 131);
+      color: #fff;
+      border: none;
+      width: 30px;
+      height: 30px;
+      display: none;
+      transition: all .3s ease;
+      &:active{
+        transform: scale(.9);
+      }
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .nav{
+      .nav__menu{
+        display: none;
+      }
+      .modal-btn{
+        display: block;
       }
     }
   }

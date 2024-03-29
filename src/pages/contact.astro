@@ -1,0 +1,41 @@
+---
+  import Layout from '../layouts/Layout.astro';
+  import Nav from '../components/Nav.astro';
+  import Banner from '../components/Banner.astro';
+  import contact from "../../public/contact.jpg"
+	import { Image } from 'astro:assets';
+	import Container from '../components/Container.astro';
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Nav/>
+    <Banner>
+			<Container>
+				<div class="banner-content">
+					<h1>CONTACT</h1>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, architecto aliquid cum ipsam magni vitae minima. Ex dolores sapiente vitae.</p>
+
+					<button>contact</button>
+				</div>
+			</Container>
+
+			<Image src={contact as any} alt="image" />
+    </Banner>
+    
+	</main>
+</Layout>
+
+<style>
+	main {
+		position: fixed;
+		left: 0;
+		width: 100vw;
+		margin: auto;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	
+</style>
