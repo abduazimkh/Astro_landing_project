@@ -4,7 +4,9 @@
   import Banner from '../components/Banner.astro';
   import about from "../../public/about.jpg"
 	import { Image } from 'astro:assets';
-import Container from '../components/Container.astro';
+	import Container from '../components/Container.astro';
+	import Card from '../components/Card.astro';
+
 
 ---
 
@@ -24,18 +26,72 @@ import Container from '../components/Container.astro';
 			<Image src={about as any} alt="image" />
     </Banner>
     
+		<Container>
+			<div>
+				<h1>About Us</h1>
+
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt pariatur eos sequi iure id aliquam culpa voluptatum quae ipsa doloremque explicabo ipsum laboriosam non dolorem minima voluptate quis iusto debitis, praesentium fugiat obcaecati. Delectus alias minus eum, exercitationem ut quos? Doloremque quae mollitia possimus ipsum perferendis, corrupti perspiciatis itaque facilis odio dolore consequuntur quas tempora modi provident a hic quaerat ut nam iste dolorem eaque? Eligendi, nesciunt! Alias recusandae amet, possimus, accusantium magnam velit id explicabo, quisquam aliquid praesentium rerum?</p>
+				<br>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores velit molestias labore necessitatibus maiores impedit maxime ipsum eveniet veritatis saepe. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius autem maiores, architecto dolore tempora commodi at magnam officiis ipsa illum, repudiandae eligendi aliquid possimus tenetur! Perferendis ad nemo ea accusamus sapiente tempore a ut nihil, impedit enim, quis mollitia ab quidem omnis consectetur. Illo fugit consequatur quis pariatur explicabo maxime.</p>
+
+
+			<ul role="list" class="link-card-grid">
+				<Card
+					image='https://www.flowercentrebirmingham.co.uk/Websites/569/images/product/1868062946large.jpg?ver=14'
+					href="/"
+					title="Learn more"
+					body='Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+				/>
+				<Card
+					image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZMm9pxQqyH9DuVcvTpHTBeQzS5w9SOOMDCg&usqp=CAU'
+					href="/"
+					title="Learn more"
+					body='Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+				/>
+				<Card
+					image="https://www.fnp.com/images/pr/l/v20210121175156/pink-roses-and-carnations-in-love-you-sticker-vase_3.jpg"
+					href="/"
+					title="Learn more"
+					body='Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+				/>
+			</ul>
+
+
+			</div>
+		</Container>
+
 	</main>
 </Layout>
 
 <style>
 	main {
-		position: fixed;
-		left: 0;
-		width: 100vw;
+		width: 100%;
 		margin: auto;
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+		overflow: auto;
 	}
+
+	.link-card-grid {
+		margin-top: 4rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		padding: 0;
+	}
+
+
+	@media only screen and (max-width: 950px) {
+		.link-card-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+  }
+
+	@media only screen and (max-width: 600px) {
+		.link-card-grid {
+			grid-template-columns: 1fr;
+		}
+  }
 	
 </style>
